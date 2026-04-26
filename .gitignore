@@ -97,6 +97,14 @@ InitTestScene*.unity*
 # /Assets/AddressableAssetsData/OSX/addressables_content_state.bin
 /[Aa]ssets/AddressableAssetsData/*/*.bin*
 
+# QFramework optional example/test packages
+/[Aa]ssets/QFramework/**/Example.unitypackage
+/[Aa]ssets/QFramework/**/Example.unitypackage.meta
+/[Aa]ssets/QFramework/**/Examples.unitypackage
+/[Aa]ssets/QFramework/**/Examples.unitypackage.meta
+/[Aa]ssets/QFramework/**/Tests.unitypackage
+/[Aa]ssets/QFramework/**/Tests.unitypackage.meta
+
 # Visual Scripting auto-generated files
 /[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db
 /[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db.meta
