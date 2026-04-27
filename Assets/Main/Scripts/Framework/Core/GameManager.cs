@@ -2,6 +2,7 @@ using System;
 using CodeFighter.Framework.Controller;
 using CodeFighter.Framework.Controller.Base.Interface;
 using CodeFighter.Framework.Controller.Global;
+using CodeFighter.UI;
 using QFramework;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -44,6 +45,8 @@ namespace CodeFighter.Framework.Core
 
                 await Addressables.InitializeAsync().Task;
 
+                SetUIKit();
+
                 var ctx = new LoadingContext(progress => { /* 加载进度回调 */ });
                 await ControllerSet.Initialize(ctx);
 
@@ -63,6 +66,18 @@ namespace CodeFighter.Framework.Core
             if (cameraController != null)
             {
                 ControllerSet.Add(cameraController);
+            }
+        }
+
+        private void SetUIKit()
+        {
+            UIKit.Config.PanelLoaderPool = new AddressablePanelLoaderPool();
+
+            var cameraController = ControllerSet.Get<CameraController>();
+            if (cameraController != null)
+            {
+                UIKit.Root.Canvas.renderMode = RenderMode.ScreenSpaceCamera;
+                UIKit.Root.Canvas.worldCamera = cameraController.UICamera;
             }
         }
 
