@@ -1,6 +1,7 @@
 using System;
 using CodeFighter.Framework.Controller;
 using CodeFighter.Framework.Controller.Base.Interface;
+using CodeFighter.Framework.Controller.Global;
 using QFramework;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -57,7 +58,12 @@ namespace CodeFighter.Framework.Core
         protected virtual void SetControllers()
         {
             ControllerSet = new ControllerSet();
-            // 子类在此注册具体控制器
+
+            var cameraController = GetComponentInChildren<CameraController>();
+            if (cameraController != null)
+            {
+                ControllerSet.Add(cameraController);
+            }
         }
 
         private void OnApplicationQuit()
