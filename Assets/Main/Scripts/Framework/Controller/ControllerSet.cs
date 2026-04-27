@@ -7,30 +7,21 @@ using QFramework;
 
 namespace CodeFighter.Framework.Controller
 {
-    [Serializable]
     public class ControllerSet : IInitController, IUpdate
     {
         public List<IInitController> Controllers { get; private set; } = new();
-        private List<IUpdate> _updateControllers = new();
-        
+        private readonly Dictionary<Type, IInitController> _controllerMap = new();
+        private readonly HashSet<IUpdate> _updateControllers = new();
+
         public async UniTask Initialize(IInitContext context = null)
         {
-            // 尝试转换，看看是不是带进度功能的 Context
             var loadingContext = context as ILoadingContext;
 
             int total = Controllers.Count;
             for (int i = 0; i < total; i++)
             {
-                // 1. 调用子 Controller 原始的 Initialize
                 await Controllers[i].Initialize(context);
 
-                if (Controllers[i] is IUpdate updateController)
-                {
-                    if (!_updateControllers.Contains(updateController))
-                        _updateControllers.Add(updateController);
-                }
-
-                // 2. 如果支持进度，则反馈给外部
                 float progress = (float)(i + 1) / total;
                 loadingContext?.UpdateProgress(progress);
             }
@@ -39,16 +30,24 @@ namespace CodeFighter.Framework.Controller
         public void Add(IInitController controller)
         {
             Controllers.Add(controller);
+
+            var type = controller.GetType();
+            if (!_controllerMap.ContainsKey(type))
+            {
+                _controllerMap[type] = controller;
+            }
+
+            if (controller is IUpdate updatable)
+            {
+                _updateControllers.Add(updatable);
+            }
         }
 
         public T Get<T>() where T : IInitController
         {
-            foreach (var controller in Controllers)
+            if (_controllerMap.TryGetValue(typeof(T), out var controller))
             {
-                if (controller is T t)
-                {
-                    return t;
-                }
+                return (T)controller;
             }
 
             return default;
@@ -62,16 +61,17 @@ namespace CodeFighter.Framework.Controller
             }
 
             Controllers.Clear();
+            _controllerMap.Clear();
+            _updateControllers.Clear();
         }
 
         public IArchitecture GetArchitecture()
         {
             return GameArchitecture.Interface;
         }
-        
+
         public void Update()
         {
-            // Debug.Log("Update Controllers");
             foreach (var controller in _updateControllers)
             {
                 controller.Update();
