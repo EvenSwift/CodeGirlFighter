@@ -11,7 +11,8 @@ namespace CodeFighter.Framework.Controller.Base
     /// </summary>
     public abstract class MonoController : MonoBehaviour, IInitController
     {
-        private bool _isReleased = false;
+        private bool _isReleased;
+
         public virtual async UniTask Initialize(IInitContext context = null)
         {
             await OnInitialize(context);
@@ -28,19 +29,12 @@ namespace CodeFighter.Framework.Controller.Base
             _isReleased = true;
 
             OnRelease();
-        
-            // 如果是代码主动调用 Release，且物体还活着，则执行销毁
-            if (this != null && gameObject != null)
-            {
-                Destroy(gameObject);
-            }
         }
 
         protected abstract void OnRelease();
 
         private void OnDestroy()
         {
-            // 如果是 Unity 自动销毁（比如切换场景），确保逻辑也得到清理
             if (!_isReleased)
             {
                 _isReleased = true;

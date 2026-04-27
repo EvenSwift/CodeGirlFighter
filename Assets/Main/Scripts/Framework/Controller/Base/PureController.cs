@@ -1,9 +1,7 @@
-using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using CodeFighter.Framework.Controller.Base.Interface;
 using CodeFighter.Framework.Core;
 using QFramework;
-using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace CodeFighter.Framework.Controller.Base
 {
@@ -32,11 +30,6 @@ namespace CodeFighter.Framework.Controller.Base
 
         public void Release()
         {
-            // if (!Context.IsPlaying)
-            // {
-            //     return;
-            // }
-            
             OnRelease();
         }
 
@@ -45,16 +38,6 @@ namespace CodeFighter.Framework.Controller.Base
         public IArchitecture GetArchitecture()
         {
             return GameArchitecture.Interface;
-        }
-    }
-
-    public abstract class SyncPureController : PureController, IResourceLoader
-    {
-        public Dictionary<string, AsyncOperationHandle> AssetCaches { get; } = new();
-
-        public IResourceLoader GetResourceLoader()
-        {
-            return this;
         }
     }
 }

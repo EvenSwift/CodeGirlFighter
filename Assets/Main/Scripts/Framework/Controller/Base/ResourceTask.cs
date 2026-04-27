@@ -7,7 +7,7 @@ namespace CodeFighter.Framework.Controller.Base
 {
     public class ResourceTask : IMultipleTask
     {
-        public int TaskCount => _taskList.Count;
+        public int TaskCount => _taskList.Count + _subTaskCount;
         public float Progress { get; private set; }
         public event Action<ITask> Perform;
         public event Action<ITask> Completed;
@@ -27,6 +27,9 @@ namespace CodeFighter.Framework.Controller.Base
 
         public void Execute()
         {
+            _loadedCount = 0;
+            Progress = 0f;
+
             foreach (var task in _taskList)
             {
                 var handle = task.Invoke();
@@ -59,6 +62,7 @@ namespace CodeFighter.Framework.Controller.Base
 
             Completed?.Invoke(this);
             _taskList.Clear();
+            _subTaskCount = 0;
         }
     }
 }
