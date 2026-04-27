@@ -1,4 +1,3 @@
-using System;
 using Cysharp.Threading.Tasks;
 using CodeFighter.Framework.Core;
 using QFramework;
@@ -11,9 +10,8 @@ namespace CodeFighter.Framework.Controller.Base.Interface
         void Release();
     }
 
-    public interface ICanGetController
+    public interface ICanGetController : ICanGetGameManager
     {
-        GameManager GetGameManager();
     }
 
     public static class InitControllerExtension

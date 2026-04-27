@@ -1,12 +1,10 @@
 using System.Collections;
-using CodeFighter.Framework.Core;
 using UnityEngine;
 
 namespace CodeFighter.Framework.Controller.Base.Interface
 {
-    public interface ICoroutineStarter
+    public interface ICoroutineStarter : ICanGetGameManager
     {
-        GameManager GetGameManager();
     }
 
     public static class ICoroutineStarterExtension
