@@ -9,11 +9,17 @@
 
 using System;
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace QFramework
 {
     public static class AudioPlayerExtensions
     {
+        public static T SetGroup<T>(this T self, AudioMixerGroup group) where T : AbstractAudioPlayer
+        {
+            self.AudioSourceProxy.SetOutputAudioMixerGroup(group);
+            return self;
+        }
         public static T OnStart<T>(this T self, Action onStart) where T : AbstractAudioPlayer
         {
             self.LifeCycle.RegisterOnStartOnce(onStart);

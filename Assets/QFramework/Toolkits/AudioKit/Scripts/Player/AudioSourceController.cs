@@ -9,6 +9,7 @@
 
 using System;
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace QFramework
 {
@@ -21,6 +22,17 @@ namespace QFramework
 
         internal bool Paused { get; private set; } = false;
         internal bool Loop { get; private set; } = false;
+
+        internal AudioMixerGroup OutputAudioMixerGroup { get; private set; }
+
+        internal void SetOutputAudioMixerGroup(AudioMixerGroup mixerGroup)
+        {
+            OutputAudioMixerGroup = mixerGroup;
+            if (AudioSource)
+            {
+                AudioSource.outputAudioMixerGroup = mixerGroup;
+            }
+        }
 
         internal void InitParameters()
         {
@@ -92,6 +104,10 @@ namespace QFramework
             SetVolume(Volume);
             SetVolumeScale(VolumeScale);
             SetPitch(Pitch);
+            if (OutputAudioMixerGroup != null && AudioSource)
+            {
+                AudioSource.outputAudioMixerGroup = OutputAudioMixerGroup;
+            }
         }
 
         internal void Play(Action onSoundPlayFinish)
