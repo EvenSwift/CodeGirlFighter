@@ -3,6 +3,7 @@ using CodeFighter.Framework.Controller;
 using CodeFighter.Framework.Controller.Base.Interface;
 using CodeFighter.Framework.Controller.Global;
 using CodeFighter.UI;
+using Main.Scripts.UI.Panel;
 using QFramework;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -51,6 +52,8 @@ namespace CodeFighter.Framework.Core
                 await ControllerSet.Initialize(ctx);
 
                 IsInitialized = true;
+
+                UIKit.OpenPanel<UIMainPanel>();
             }
             catch (Exception ex)
             {

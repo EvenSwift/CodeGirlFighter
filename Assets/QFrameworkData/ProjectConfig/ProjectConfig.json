@@ -1,1 +1,1 @@
-{"Namespace":"CodeFighter","UIScriptDir":"/Main/Scripts/UI/Panel","UIPrefabDir":"/Main/Addressable/Prefabs/UI"}
+{"Namespace":"Main.Scripts.UI.Panel","UIScriptDir":"/Main/Scripts/UI/Panel","UIPrefabDir":"/Main/Addressable/Prefabs/UI","AssemblyNamesToSearch":["Assembly-CSharp"]}
