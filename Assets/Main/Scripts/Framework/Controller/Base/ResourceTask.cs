@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using CodeFighter.Framework.Controller.Base.Interface;
+using Main.Scripts.Framework.Controller.Base.Interface;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-namespace CodeFighter.Framework.Controller.Base
+namespace Main.Scripts.Framework.Controller.Base
 {
     public class ResourceTask : IMultipleTask
     {

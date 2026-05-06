@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
-using CodeFighter.Framework.Controller.Base.Interface;
-using CodeFighter.Framework.Core;
+using Main.Scripts.Framework.Controller.Base.Interface;
+using Main.Scripts.Framework.Core;
 using QFramework;
 using UnityEngine;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-namespace CodeFighter.UI.Base
+namespace Main.Scripts.UI.Base
 {
     /// <summary>
     /// 增强版 UIPanel 基类，集成音效、动画、资源缓存

@@ -1,9 +1,9 @@
-using CodeFighter.Framework.Controller.Base.Interface;
-using CodeFighter.Framework.Core;
+using Main.Scripts.Framework.Controller.Base.Interface;
+using Main.Scripts.Framework.Core;
 using QFramework;
 using UnityEngine;
 
-namespace CodeFighter.UI.Base
+namespace Main.Scripts.UI.Base
 {
     /// <summary>
     /// 标记接口：Widget 所需的数据结构

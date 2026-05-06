@@ -1,10 +1,10 @@
 using Cysharp.Threading.Tasks;
-using CodeFighter.Framework.Controller.Base;
-using CodeFighter.Framework.Controller.Base.Interface;
+using Main.Scripts.Framework.Controller.Base;
+using Main.Scripts.Framework.Controller.Base.Interface;
 using QFramework;
 using UnityEngine;
 
-namespace CodeFighter.Framework.Controller.Global
+namespace Main.Scripts.Framework.Controller.Global
 {
     public class CameraController : MonoController
     {

@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
-using CodeFighter.Framework.Controller.Base.Interface;
-using CodeFighter.Framework.Core;
+using Main.Scripts.Framework.Controller.Base.Interface;
+using Main.Scripts.Framework.Core;
 using QFramework;
 
-namespace CodeFighter.Framework.Controller
+namespace Main.Scripts.Framework.Controller
 {
     public class ControllerSet : IInitController, IUpdate
     {

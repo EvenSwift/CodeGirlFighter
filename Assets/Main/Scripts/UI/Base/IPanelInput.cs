@@ -1,4 +1,4 @@
-namespace CodeFighter.UI
+namespace Main.Scripts.UI.Base
 {
     /// <summary>
     /// 实现此接口的面板由 UIKitEx 自动管理输入绑定

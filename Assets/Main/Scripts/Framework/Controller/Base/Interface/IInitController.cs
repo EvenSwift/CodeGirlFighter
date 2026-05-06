@@ -1,8 +1,8 @@
 using Cysharp.Threading.Tasks;
-using CodeFighter.Framework.Core;
+using Main.Scripts.Framework.Core;
 using QFramework;
 
-namespace CodeFighter.Framework.Controller.Base.Interface
+namespace Main.Scripts.Framework.Controller.Base.Interface
 {
     public interface IInitController : IController
     {

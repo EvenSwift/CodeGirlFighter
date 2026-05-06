@@ -1,4 +1,4 @@
-namespace CodeFighter.Framework.Controller.Base.Interface
+namespace Main.Scripts.Framework.Controller.Base.Interface
 {
     // 所有需要追踪受 TimeSystem 影响的游戏时间的类都应该实现此接口
     public interface ITickGameTime

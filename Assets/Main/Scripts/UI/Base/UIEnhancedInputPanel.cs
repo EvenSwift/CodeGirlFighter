@@ -1,4 +1,4 @@
-namespace CodeFighter.UI.Base
+namespace Main.Scripts.UI.Base
 {
     /// <summary>
     /// 集成输入绑定的增强面板基类，由 UIKitEx 自动管理输入生命周期

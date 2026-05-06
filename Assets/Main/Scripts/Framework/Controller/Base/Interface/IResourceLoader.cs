@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-namespace CodeFighter.Framework.Controller.Base.Interface
+namespace Main.Scripts.Framework.Controller.Base.Interface
 {
     /// <summary>
     /// 实现该接口以加载资源，并管理资源缓存

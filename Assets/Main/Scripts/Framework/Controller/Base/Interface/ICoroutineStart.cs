@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace CodeFighter.Framework.Controller.Base.Interface
+namespace Main.Scripts.Framework.Controller.Base.Interface
 {
     public interface ICoroutineStarter : ICanGetGameManager
     {

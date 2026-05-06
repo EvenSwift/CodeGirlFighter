@@ -1,14 +1,14 @@
 using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
-using CodeFighter.Framework.Core;
+using Main.Scripts.Framework.Core;
 using QFramework;
 using UnityEngine;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using Object = UnityEngine.Object;
 
-namespace CodeFighter.Framework.Controller.Base.Interface
+namespace Main.Scripts.Framework.Controller.Base.Interface
 {
     public static class LoadResourceExtension
     {

@@ -1,4 +1,4 @@
-using CodeFighter.UI.Base;
+using Main.Scripts.UI.Base;
 using QFramework;
 
 namespace Main.Scripts.UI.Panel

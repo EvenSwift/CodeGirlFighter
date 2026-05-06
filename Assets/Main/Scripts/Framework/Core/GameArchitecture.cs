@@ -1,6 +1,6 @@
 using QFramework;
 
-namespace CodeFighter.Framework.Core
+namespace Main.Scripts.Framework.Core
 {
     public class GameArchitecture : Architecture<GameArchitecture>
     {

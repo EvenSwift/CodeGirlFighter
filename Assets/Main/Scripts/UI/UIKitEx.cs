@@ -1,8 +1,9 @@
 using System.Collections.Generic;
+using Main.Scripts.UI.Base;
 using QFramework;
 using UnityEngine;
 
-namespace CodeFighter.UI
+namespace Main.Scripts.UI
 {
     /// <summary>
     /// UIKit 扩展：栈式面板管理 + 自动输入切换

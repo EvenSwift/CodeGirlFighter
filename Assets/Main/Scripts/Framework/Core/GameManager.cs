@@ -1,14 +1,14 @@
 using System;
-using CodeFighter.Framework.Controller;
-using CodeFighter.Framework.Controller.Base.Interface;
-using CodeFighter.Framework.Controller.Global;
-using CodeFighter.UI;
+using Main.Scripts.Framework.Controller;
+using Main.Scripts.Framework.Controller.Base.Interface;
+using Main.Scripts.Framework.Controller.Global;
+using Main.Scripts.UI;
 using Main.Scripts.UI.Panel;
 using QFramework;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-namespace CodeFighter.Framework.Core
+namespace Main.Scripts.Framework.Core
 {
     public class GameManager : MonoBehaviour
     {

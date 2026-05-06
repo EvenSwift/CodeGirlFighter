@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-namespace CodeFighter.Audio
+namespace Main.Scripts.Audio
 {
     public class AddressableAudioLoaderPool : AbstractAudioLoaderPool
     {

@@ -5,7 +5,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 
-namespace CodeFighter.Framework.Core
+namespace Main.Scripts.Framework.Core
 {
     public interface IResourceStrategy
     {

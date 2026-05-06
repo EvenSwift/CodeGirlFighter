@@ -1,4 +1,4 @@
-namespace CodeFighter.Framework.Controller.Base.Interface
+namespace Main.Scripts.Framework.Controller.Base.Interface
 {
     /*
      * 使用该接口去管理游戏中所有需要 Update 的组件

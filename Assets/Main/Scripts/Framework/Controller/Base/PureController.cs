@@ -1,9 +1,9 @@
 using Cysharp.Threading.Tasks;
-using CodeFighter.Framework.Controller.Base.Interface;
-using CodeFighter.Framework.Core;
+using Main.Scripts.Framework.Controller.Base.Interface;
+using Main.Scripts.Framework.Core;
 using QFramework;
 
-namespace CodeFighter.Framework.Controller.Base
+namespace Main.Scripts.Framework.Controller.Base
 {
     /// <summary>
     /// 无需MonoBehaviour的逻辑控制器

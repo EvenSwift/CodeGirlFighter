@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-namespace CodeFighter.UI
+namespace Main.Scripts.UI
 {
     public class AddressablePanelLoaderPool : AbstractPanelLoaderPool
     {

@@ -2,7 +2,7 @@ using System;
 using QFramework;
 using UnityEngine.Audio;
 
-namespace CodeFighter.Audio
+namespace Main.Scripts.Audio
 {
     /// <summary>
     /// AudioKit 扩展：集成 AudioMixer 分组路由
