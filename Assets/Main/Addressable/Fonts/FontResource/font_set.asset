@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 546073d629944d518680b530b756f746, type: 3}
+  m_Name: font_set
+  m_EditorClassIdentifier: 
+  fontInfos:
+  - fontName: Fusion12
+    fontType: 0
+    fontSize: 12
+    fontAsset: {fileID: 11400000, guid: 3338b7438a9bc9245a63e6827f2f4a1b, type: 2}
+  - fontName: Fusion10
+    fontType: 0
+    fontSize: 10
+    fontAsset: {fileID: 11400000, guid: cd5f43be58314a64c9346f30c6532cad, type: 2}
+  - fontName: Fusion8
+    fontType: 0
+    fontSize: 8
+    fontAsset: {fileID: 11400000, guid: 34c9dc5007bb4514ebdc8da81d6f2375, type: 2}
+  - fontName: SourceHanSans
+    fontType: 1
+    fontSize: 0
+    fontAsset: {fileID: 11400000, guid: 29a176fa638e5b046bdb57fba40fbc17, type: 2}
