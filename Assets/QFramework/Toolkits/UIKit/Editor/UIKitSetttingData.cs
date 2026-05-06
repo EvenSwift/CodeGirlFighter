@@ -25,9 +25,9 @@ namespace QFramework
 
 		public string Namespace;
 
-		public string UIScriptDir = "/Scripts/UI";
+		public string UIScriptDir = "/Main/Scripts/UI/Panel";
 
-		public string UIPrefabDir = "/Art/UIPrefab";
+		public string UIPrefabDir = "/Main/Addressable/Prefabs/UI";
 
 		public const string DefaultAssemblyNameToSearch = "Assembly-CSharp";
 		public List<string> AssemblyNamesToSearch = new List<string>()

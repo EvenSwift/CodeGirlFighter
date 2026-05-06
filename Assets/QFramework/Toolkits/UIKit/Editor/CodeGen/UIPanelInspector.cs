@@ -42,7 +42,7 @@ namespace QFramework
                 }
                 else
                 {
-                    var prefabPath = PrefabStageUtility.GetCurrentPrefabStage().prefabAssetPath;
+                    var prefabPath = PrefabStageUtility.GetCurrentPrefabStage().assetPath;
                     var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
                     UICodeGenerator.DoCreateCode(new[] { prefab });
                 }
