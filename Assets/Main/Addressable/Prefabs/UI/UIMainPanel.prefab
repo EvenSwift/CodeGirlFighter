@@ -58,6 +58,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fa9e3c1170ac17459cff352a6c660b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  popSound: 
+  closeSound: 
 --- !u!1 &5201012499834154349
 GameObject:
   m_ObjectHideFlags: 0
@@ -69,6 +71,7 @@ GameObject:
   - component: {fileID: 143851394728039190}
   - component: {fileID: 8545514265650530312}
   - component: {fileID: 3072824698270537385}
+  - component: {fileID: 5377429206525234116}
   m_Layer: 5
   m_Name: TextTest
   m_TagString: Untagged
@@ -93,7 +96,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8545514265650530312
 CanvasRenderer:
@@ -125,8 +128,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Hello\uFF01"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 29a176fa638e5b046bdb57fba40fbc17, type: 2}
+  m_sharedMaterial: {fileID: -5253428906900926871, guid: 29a176fa638e5b046bdb57fba40fbc17, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -192,3 +195,17 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5377429206525234116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5201012499834154349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 2
+  m_VerticalFit: 2
