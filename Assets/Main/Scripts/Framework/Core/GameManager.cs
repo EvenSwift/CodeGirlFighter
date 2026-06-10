@@ -53,7 +53,7 @@ namespace Main.Scripts.Framework.Core
 
                 IsInitialized = true;
 
-                UIKit.OpenPanel<UIStartPanel>();
+                UIKitEx.OpenPanelWithInput<UIStartPanel>();
             }
             catch (Exception ex)
             {
