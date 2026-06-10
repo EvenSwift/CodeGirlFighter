@@ -37,11 +37,13 @@ namespace Main.Scripts.UI.Panel
         protected override void OnInit(IUIData uiData = null)
         {
             mData = uiData as UIStartPanelData ?? new UIStartPanelData();
-            // please add init code here
         }
 
         protected override void OnOpen(IUIData uiData = null)
         {
+            BtnStart.onClick.AddListener(OnBtnStartClick);
+            BtnSaves.onClick.AddListener(OnBtnSavesClick);
+            BtnSettings.onClick.AddListener(OnBtnSettingsClick);
         }
 
         protected override void OnShow()
@@ -54,26 +56,25 @@ namespace Main.Scripts.UI.Panel
 
         protected override void OnClose()
         {
+            BtnStart.onClick.RemoveListener(OnBtnStartClick);
+            BtnSaves.onClick.RemoveListener(OnBtnSavesClick);
+            BtnSettings.onClick.RemoveListener(OnBtnSettingsClick);
         }
 
         #region UIEvent
 
         private void OnBtnStartClick()
         {
-            if (BtnStart != null && BtnStart.IsInteractable())
-                BtnStart.onClick?.Invoke();
+            UIKitEx.CloseCurrentPanel();
+            UIKitEx.OpenPanelWithInput<UIMainPanel>();
         }
 
         private void OnBtnSavesClick()
         {
-            if (BtnSaves != null && BtnSaves.IsInteractable())
-                BtnSaves.onClick?.Invoke();
         }
 
         private void OnBtnSettingsClick()
         {
-            if (BtnSettings != null && BtnSettings.IsInteractable())
-                BtnSettings.onClick?.Invoke();
         }
 
         #endregion
