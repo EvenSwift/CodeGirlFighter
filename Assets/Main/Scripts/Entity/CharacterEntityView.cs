@@ -1,9 +1,5 @@
-﻿using Cysharp.Threading.Tasks;
-using Main.Scripts.Framework.Controller.Base;
-using Main.Scripts.Framework.Controller.Base.Interface;
-using Main.Scripts.Framework.Core;
+﻿using Main.Scripts.Framework.Controller.Base.Interface;
 using Main.Scripts.Framework.Model.Data;
-using QFramework;
 using UnityEngine;
 
 namespace Main.Scripts.Entity
@@ -24,67 +20,22 @@ namespace Main.Scripts.Entity
     }
 
     /// <summary>
-    /// 角色 View 基类，所有角色表现类的抽象基类
-    /// 继承 MonoController，与 Prefab 绑定
+    /// 角色实体 View，挂载到角色 Prefab 上的具体表现类
     /// </summary>
-    public abstract class CharacterViewBase : MonoController, ICanLoadResource, ICanGetGameManager
+    public class CharacterEntityView : CharacterViewBase
     {
-        protected IResourceLoader ResourceLoader;
+        [SerializeField] private SpriteRenderer spriteRenderer;
 
-        /// <summary>
-        /// 角色渲染器，子类必须提供
-        /// </summary>
-        public abstract SpriteRenderer Renderer { get; }
+        public override SpriteRenderer Renderer => spriteRenderer;
+        public override Transform RendererTransform => spriteRenderer != null ? spriteRenderer.transform : transform;
 
-        /// <summary>
-        /// 渲染器的 Transform，用于动画/翻转操作
-        /// </summary>
-        public abstract Transform RendererTransform { get; }
-
-        /// <summary>
-        /// 当前角色数据引用
-        /// </summary>
-        public CharacterData Data { get; private set; }
-
-        protected override UniTask OnInitialize(IInitContext context)
+        protected override void RefreshView()
         {
-            var initContext = (CharacterEntityViewInitContext)context;
-            ResourceLoader = initContext.ResourceLoader;
-            Data = initContext.Data;
-
-            transform.position = Data.position;
-            RefreshView();
-
-            return UniTask.CompletedTask;
         }
 
         protected override void OnRelease()
         {
-            Data = null;
-            ResourceLoader = null;
+            base.OnRelease();
         }
-
-        /// <summary>
-        /// 刷新角色视觉表现（Sprite、翻转、动画等）
-        /// </summary>
-        protected abstract void RefreshView();
-
-        #region ICanLoadResource
-
-        public IResourceLoader GetResourceLoader()
-        {
-            return ResourceLoader;
-        }
-
-        #endregion
-
-        #region ICanGetGameManager
-
-        public GameManager GetGameManager()
-        {
-            return GameManager.Instance;
-        }
-
-        #endregion
     }
 }
