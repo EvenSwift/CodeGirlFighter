@@ -62,7 +62,7 @@ namespace Main.Scripts.Framework.Core
             }
         }
 
-        protected virtual void SetControllers()
+        private void SetControllers()
         {
             ControllerSet = new ControllerSet();
 
