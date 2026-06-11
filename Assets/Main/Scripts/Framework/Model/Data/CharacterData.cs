@@ -58,10 +58,11 @@ namespace Main.Scripts.Framework.Model.Data
         /// <summary>
         /// 构造角色数据，uid 为空时自动生成
         /// </summary>
-        public CharacterData(int configId, Vector3 position, string uid = null)
+        public CharacterData(int configId, Vector3 position, bool isFlipped = false, string uid = null)
         {
             this.configId = configId;
             this.position = position;
+            this.isFlipped = isFlipped;
             this.uid = string.IsNullOrEmpty(uid) ? Guid.NewGuid().ToString() : uid;
         }
 
