@@ -1,5 +1,6 @@
 using System;
 using Main.Scripts.Framework.Controller;
+using Main.Scripts.Framework.Controller.Character;
 using Main.Scripts.Framework.Controller.Base.Interface;
 using Main.Scripts.Framework.Controller.Global;
 using Main.Scripts.UI;
@@ -64,6 +65,8 @@ namespace Main.Scripts.Framework.Core
         protected virtual void SetControllers()
         {
             ControllerSet = new ControllerSet();
+
+            ControllerSet.Add(new FighterController());
 
             var cameraController = GetComponentInChildren<CameraController>();
             if (cameraController != null)
