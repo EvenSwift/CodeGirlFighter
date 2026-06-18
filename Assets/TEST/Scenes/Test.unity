@@ -284,7 +284,7 @@ Transform:
   m_GameObject: {fileID: 979936165}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -376,9 +376,9 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  field of view: 175
+  orthographic: 1
+  orthographic size: 180
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -541,6 +541,26 @@ PrefabInstance:
     - target: {fileID: 4564688574076328172, guid: ee2d0e5b9f3975f40ba8f5f743487a15, type: 3}
       propertyPath: m_Name
       value: CharacterPre
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564688574076328172, guid: ee2d0e5b9f3975f40ba8f5f743487a15, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5268426385119775068, guid: ee2d0e5b9f3975f40ba8f5f743487a15, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5268426385119775068, guid: ee2d0e5b9f3975f40ba8f5f743487a15, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5347512113665236981, guid: ee2d0e5b9f3975f40ba8f5f743487a15, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2787919c73f2d894e8ccece63cace040, type: 3}
+    - target: {fileID: 5347512113665236981, guid: ee2d0e5b9f3975f40ba8f5f743487a15, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1463,5 +1483,5 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1926435924}
-  - {fileID: 6356786378776202822}
   - {fileID: 1341562250}
+  - {fileID: 6356786378776202822}
