@@ -1,4 +1,5 @@
-﻿using Cysharp.Threading.Tasks;
+using Cysharp.Threading.Tasks;
+using Main.Scripts.Framework.Constant;
 using Main.Scripts.Framework.Controller.Base;
 using Main.Scripts.Framework.Controller.Base.Interface;
 using Main.Scripts.Framework.Core;
@@ -38,8 +39,11 @@ namespace Main.Scripts.Entity
             ResourceLoader = initContext.ResourceLoader;
             Data = initContext.Data;
 
-            transform.position = Data.position;
+            // 先刷新 Sprite 等视觉表现
             RefreshView();
+
+            // Sprite 加载完成后计算最终位置
+            CalculatePosition();
 
             return UniTask.CompletedTask;
         }
@@ -56,6 +60,38 @@ namespace Main.Scripts.Entity
         /// 刷新角色视觉表现（Sprite、翻转、动画等），子类必须实现
         /// </summary>
         protected abstract void RefreshView();
+
+        /// <summary>
+        /// 根据 Sprite 尺寸和场景常量计算角色最终位置
+        /// 左侧角色（player）：贴左边缘，x = -HALF_WORLD_WIDTH + spriteWorldWidth/2
+        /// 右侧角色（opponent）：贴右边缘，x = +HALF_WORLD_WIDTH - spriteWorldWidth/2，并水平翻转
+        /// </summary>
+        private void CalculatePosition()
+        {
+            if (Renderer == null || Renderer.sprite == null)
+            {
+                Debug.LogWarning("[CharacterViewBase] CalculatePosition 失败：Renderer 或 Sprite 为空");
+                return;
+            }
+
+            // Sprite 世界宽度
+            var spriteWorldWidth = Renderer.sprite.rect.width / GameConst.PIXELS_PER_UNIT;
+
+            if (Data.isFlipped)
+            {
+                // 右侧角色（对手），靠右边缘放置，翻转向左面对玩家
+                var rightX = GameConst.HALF_WORLD_WIDTH - spriteWorldWidth * 0.5f;
+                transform.position = new Vector3(rightX, 0f, 0f);
+                Renderer.flipX = true;
+            }
+            else
+            {
+                // 左侧角色（玩家），靠左边缘放置，默认朝右
+                var leftX = -GameConst.HALF_WORLD_WIDTH + spriteWorldWidth * 0.5f;
+                transform.position = new Vector3(leftX, 0f, 0f);
+                Renderer.flipX = false;
+            }
+        }
 
         #region ICanLoadResource
 
