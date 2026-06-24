@@ -11,5 +11,8 @@ PresetManager:
       m_ManagedTypeFallback: 
     second:
     - m_Preset: {fileID: 2655988077585873504, guid: 0dafb145e370c6846b039675292ec82b, type: 2}
-      m_Filter: Assets/Main/Addressable/Sprites
+      m_Filter: glob:"Assets/Main/Addressable/Sprites/**.png"
+      m_Disabled: 0
+    - m_Preset: {fileID: 2655988077585873504, guid: 0dafb145e370c6846b039675292ec82b, type: 2}
+      m_Filter: glob:"Assets/Main/Addressable/Sprites/**.jpg"
       m_Disabled: 0
